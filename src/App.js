@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import SearchInput from "./components/SearchInput";
 import axios from "axios";
-import { div } from "prelude-ls";
+import Header from "./components/Header";
 
 class App extends Component {
   constructor(props) {
@@ -63,7 +63,8 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="container">
+        <Header />
         <SearchInput search={this.handleSearch} />
         <ul>
           {this.state.titles.map((movie) => {

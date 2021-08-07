@@ -103,6 +103,7 @@ section {
 
 body {
   line-height: 1;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 ol,
@@ -133,4 +134,73 @@ table {
   margin: auto;
   margin-top: 2rem;
   box-sizing: border-box;
+}
+
+#carousel {
+  display: flex;
+  justify-content: space-between;
+}
+
+#myCarousel {
+  width: 60%;
+}
+
+#h1Title {
+  color: cyan;
+  text-shadow: 1px 1px black;
+  letter-spacing: 0.5em;
+  margin: 3rem auto;
+  text-align: center;
+}
+
+.hr {
+  background-color: rgb(59, 201, 245);
+  padding: 1px;
+}
+
+.listDescription {
+  text-align: center;
+  margin-top: 2em;
+  font-family: fantasy;
+  font-weight: bold;
+}
+
+.moviesList {
+  font-size: 2.5rem;
+  font-weight: bold;
+
+  margin-top: 2rem;
+  margin-left: 2rem;
+}
+
+ol {
+  list-style: decimal;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.spanButton {
+  margin-left: 2rem;
+}
+
+#inputDiv {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#input {
+  width: 70%;
+  margin: auto;
+  height: 3rem;
+
+  border: 1px solid rgb(59, 201, 245);
+}
+
+#inputButton {
+  width: 30%;
+  margin: auto;
+  height: 3rem;
 }

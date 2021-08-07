@@ -3,6 +3,7 @@ import "./App.css";
 import SearchInput from "./components/SearchInput";
 import axios from "axios";
 import Header from "./components/Header";
+import Button from "./components/Button";
 
 class App extends Component {
   constructor(props) {
@@ -55,7 +56,7 @@ class App extends Component {
         this.setState({ titles: response.data.Result });
       })
       .catch(function (error) {
-        console.error(error);
+        alert(error.message);
       });
 
     title.value = "";
@@ -65,12 +66,20 @@ class App extends Component {
     return (
       <div className="container">
         <Header />
+        <hr className="hr" />
         <SearchInput search={this.handleSearch} />
-        <ul>
+        <ol>
           {this.state.titles.map((movie) => {
-            return <li key={movie.imdb_id}>{movie.title} </li>;
+            return (
+              <li key={movie.imdb_id} className="moviesList">
+                {movie.title}
+                <span className="spanButton">
+                  <Button />
+                </span>
+              </li>
+            );
           })}
-        </ul>
+        </ol>
       </div>
     );
   }

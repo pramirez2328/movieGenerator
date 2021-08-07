@@ -1,12 +1,28 @@
-import banner1 from "../images/movieBanner.jpeg";
+import banner1 from "../images/movieBanner.jpg";
 import banner2 from "../images/movieBanner2.jpg";
 import banner3 from "../images/movieBanner3.png";
 
 function Header() {
   return (
-    <header className="container">
-      <div className="container">
-        <h2>Carousel Example</h2>
+    <header id="header">
+      <div id="carousel">
+        <div className="text-center">
+          <h2 id="h1Title">Movie Reviews</h2>
+          <hr className="hr" />
+          <h3 id="appDescription" className="text-center mt-5">
+            Enter a movie title
+          </h3>
+
+          <h4 className="listDescription">You'll find:</h4>
+          <ul className="listDescription">
+            <li>Popularity</li>
+            <li>Reviews</li>
+            <li>Year created</li>
+            <li>Plot</li>
+            <li>Release date, etc...</li>
+          </ul>
+        </div>
+
         <div id="myCarousel" className="carousel slide" data-ride="carousel">
           <ol className="carousel-indicators">
             <li

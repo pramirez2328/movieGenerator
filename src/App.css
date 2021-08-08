@@ -188,14 +188,20 @@ ol {
 #inputDiv {
   width: 100%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+#emptyWarning {
+  display: none;
+  width: 60%;
+  color: red;
 }
 
 #input {
   width: 70%;
   margin: auto;
   height: 3rem;
-
   border: 1px solid rgb(59, 201, 245);
 }
 

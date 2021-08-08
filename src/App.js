@@ -14,52 +14,67 @@ class App extends Component {
       description: [],
     };
 
-    this.movieDescription = this.movieDescription.bind(this);
+    this.handleDescription = this.handleDescription.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
   }
 
-  movieDescription(id, title) {
-    // const options = {
-    //   method: "GET",
-    //   url: `https://data-imdb1.p.rapidapi.com/movie/id/${id}/`,
-    //   headers: {
-    //     "x-rapidapi-key": "c426a80468msh489383a1e8c815ap17e034jsn7fba12f2df64",
-    //     "x-rapidapi-host": "data-imdb1.p.rapidapi.com",
-    //   },
-    // };
-    // axios
-    //   .request(options)
-    //   .then((response) => {
-    //     this.setState({ description: [response.data[title]] });
-    //   })
-    //   .catch(function (error) {
-    //     console.error(error);
-    //   });
+  handleDescription(id) {
+    const options = {
+      method: "GET",
+      url: `https://data-imdb1.p.rapidapi.com/movie/id/${id}/`,
+      headers: {
+        "x-rapidapi-key": "c426a80468msh489383a1e8c815ap17e034jsn7fba12f2df64",
+        "x-rapidapi-host": "data-imdb1.p.rapidapi.com",
+      },
+    };
+    axios
+      .request(options)
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
   }
 
   handleSearch(e) {
     e.preventDefault();
 
     let title = document.getElementById("input");
-    const options = {
-      method: "GET",
-      url: `https://data-imdb1.p.rapidapi.com/movie/imdb_id/byTitle/${title.value}/`,
-      headers: {
-        "x-rapidapi-key": "c426a80468msh489383a1e8c815ap17e034jsn7fba12f2df64",
-        "x-rapidapi-host": "data-imdb1.p.rapidapi.com",
-      },
-    };
 
-    axios
-      .request(options)
-      .then((response) => {
-        this.setState({ titles: response.data.Result });
-      })
-      .catch(function (error) {
-        alert(error.message);
-      });
+    if (!title.value) {
+      document.getElementById("emptyWarning").style.display = "block";
+    } else {
+      const options = {
+        method: "GET",
+        url: `https://data-imdb1.p.rapidapi.com/movie/imdb_id/byTitle/${title.value}/`,
+        headers: {
+          "x-rapidapi-key":
+            "c426a80468msh489383a1e8c815ap17e034jsn7fba12f2df64",
+          "x-rapidapi-host": "data-imdb1.p.rapidapi.com",
+        },
+      };
 
-    title.value = "";
+      axios
+        .request(options)
+        .then((response) => {
+          if (response.data.Result.length > 0) {
+            this.setState({ titles: response.data.Result });
+          } else {
+            alert("Please check your spelling and try again!");
+          }
+        })
+        .catch(function (error) {
+          alert(
+            "The server is not working at this time, please try again later!",
+            error.message
+          );
+        });
+
+      document.getElementById("emptyWarning").style.display = "none";
+
+      title.value = "";
+    }
   }
 
   render() {
@@ -74,7 +89,10 @@ class App extends Component {
               <li key={movie.imdb_id} className="moviesList">
                 {movie.title}
                 <span className="spanButton">
-                  <Button />
+                  <Button
+                    description={this.handleDescription}
+                    movieId={movie.imdb_id}
+                  />
                 </span>
               </li>
             );

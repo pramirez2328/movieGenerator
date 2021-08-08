@@ -1,9 +1,16 @@
 import React from "react";
 
-function Button() {
+function Button({ description, movieId }) {
+  console.log(description);
+  console.log(movieId);
+
   return (
     <>
-      <button type="button" className="btn btn-info">
+      <button
+        type="button"
+        className="btn btn-info"
+        onClick={description(movieId)}
+      >
         Show
       </button>
     </>

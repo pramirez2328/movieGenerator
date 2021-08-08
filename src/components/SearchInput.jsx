@@ -3,7 +3,8 @@ import React from "react";
 function SearchInput({ search }) {
   return (
     <div id="inputDiv">
-      <div style={{ width: "75%" }}>
+      <h6 id="emptyWarning">...enter a movie title!</h6>
+      <form style={{ width: "75%" }}>
         <input type="text" id="input" required />
         <button
           id="inputButton"
@@ -13,7 +14,7 @@ function SearchInput({ search }) {
         >
           Search
         </button>
-      </div>
+      </form>
     </div>
   );
 }

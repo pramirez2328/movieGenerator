@@ -7,7 +7,7 @@ function Header() {
     <header id="header">
       <div id="carousel">
         <div className="text-center">
-          <h2 id="h1Title">Movie Reviews</h2>
+          <h2 className="h1Title">Movie Reviews</h2>
           <hr className="hr" />
           <h3 id="appDescription" className="text-center mt-5">
             Enter a movie title

@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import "./App.css";
 import SearchInput from "./components/SearchInput";
+import CounterMovies from "./components/CounterMovies";
+import ListOfMovies from "./components/ListOfMovies";
 import axios from "axios";
 import Header from "./components/Header";
-import save from "./images/save.svg";
-import vote from "./images/vote.svg";
 
 class App extends Component {
   constructor(props) {
@@ -17,6 +17,16 @@ class App extends Component {
 
     this.handleDescription = this.handleDescription.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
+    this.handleSave = this.handleSave.bind(this);
+    this.handleLikes = this.handleLikes.bind(this);
+  }
+
+  handleSave() {
+    console.log("hey it is working");
+  }
+
+  handleLikes() {
+    console.log("likes");
   }
 
   handleDescription(titles) {
@@ -46,7 +56,7 @@ class App extends Component {
   handleSearch(e) {
     e.preventDefault();
 
-    let title = document.getElementById("input");
+    const title = document.getElementById("input");
 
     if (!title.value) {
       document.getElementById("emptyWarning").style.display = "block";
@@ -90,55 +100,16 @@ class App extends Component {
         <Header />
         <hr className="hr" />
         <SearchInput search={this.handleSearch} />
-        <div>
-          {this.state.description.map((movie) => {
-            return (
-              <div key={movie.imdb_id} className="moviesList">
-                <hr className="hr" />
-                <div className="topDescription">
-                  <div>
-                    <h1 className="topTitle">{movie.title}</h1>
-                    <h4>
-                      {movie.year} &nbsp;
-                      {movie.gen[0].genre} &nbsp;
-                      {movie.content_rating}
-                    </h4>
-                    <h5>running time {movie.movie_length}</h5>
-                    <h5 className="topPlot">{movie.plot}</h5>
-                    <iframe
-                      className="trailer"
-                      title={movie.title}
-                      src={movie.trailer}
-                    ></iframe>
-                    <div className="saveAndVote">
-                      <div className="topSave">
-                        <img className="saveIcon" src={save} alt="save icon" />
-                        <h5>Save</h5>
-                      </div>
-                      <div className="topVote">
-                        <img className="saveIcon" src={vote} alt="save icon" />
-                        <h5>Vote</h5>
-                      </div>
-                    </div>
-                  </div>
-
-                  <img
-                    className="banner"
-                    src={movie.banner}
-                    alt="movie banner"
-                  />
-                </div>
-
-                <p className="bottomDescription">{movie.description}</p>
-                <div className="bottomFacts">
-                  <h4>Popularity: {movie.popularity}</h4>
-                  <h4>Release date: {movie.release}</h4>
-                  <h4>Rating: {movie.rating}</h4>
-                </div>
-              </div>
-            );
-          })}
-        </div>
+        {this.state.description.length > 0 ? (
+          <CounterMovies moviesNumber={this.state.description.length} />
+        ) : (
+          ""
+        )}
+        <ListOfMovies
+          movies={this.state.description}
+          save={this.handleSave}
+          likes={this.handleLikes}
+        />
       </div>
     );
   }

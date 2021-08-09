@@ -154,7 +154,7 @@ table {
 }
 
 .hr {
-  background-color: rgb(4, 186, 241);
+  background-color: blue;
   padding: 1px;
   width: 100%;
 }
@@ -166,24 +166,38 @@ table {
   font-weight: bold;
 }
 
+.moviesList {
+  box-sizing: border-box;
+  border: blue 2px solid;
+  margin: 2rem 0;
+  padding: 1.5rem;
+  border-radius: 10px;
+}
+
+.top {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+}
+
 .topTitle {
   color: rgb(1, 143, 143);
   text-shadow: 1px 1px black;
-  letter-spacing: 0.3em;
-  margin: 3rem 5rem 2rem 0;
+  margin-top: 1rem;
 }
 
 .topDescription {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  margin-top: 2rem;
+  height: 40em;
+  box-sizing: border-box;
 }
 
 .banner {
-  width: 35%;
-  height: 50em;
-  margin-top: 3rem;
+  width: 40%;
+  height: 98%;
+  margin-top: 1rem;
 }
 
 .topPlot {
@@ -191,13 +205,37 @@ table {
 }
 
 .trailer {
-  width: 45em;
-  height: 20em;
+  width: 94%;
+  height: 23em;
+}
+
+.saveAndVote {
+  border: blue 1px solid;
+  padding: 0 1em 1em 1em;
+  margin-top: 1em;
+  width: 94%;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .saveIcon {
-  width: 2.5em;
+  width: 2em;
   margin-top: 2em;
+}
+
+.topSave {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  width: 20%;
+}
+
+.likeIcons {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 40%;
 }
 
 .bottomDescription {
@@ -209,29 +247,11 @@ table {
   display: flex;
   justify-content: space-around;
   margin: 1rem;
-  font-weight: bolder;
+  font-weight: bold;
   font-size: 1.5em;
+  color: blue;
 }
 
-.saveAndVote {
-  display: flex;
-  justify-content: flex-start;
-}
-
-.topSave {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: flex-end;
-  width: 20%;
-}
-
-.topVote {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: flex-end;
-
-  width: 20%;
-}
 .spanButton {
   margin-left: 2rem;
 }

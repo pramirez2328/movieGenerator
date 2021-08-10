@@ -207,12 +207,10 @@ table {
 .trailer {
   width: 94%;
   height: 23em;
+  margin-bottom: 1em;
 }
 
 .saveAndVote {
-  border: blue 1px solid;
-  padding: 0 1em 1em 1em;
-  margin-top: 1em;
   width: 94%;
   border-radius: 10px;
   display: flex;
@@ -220,8 +218,14 @@ table {
 }
 
 .saveIcon {
-  width: 2em;
-  margin-top: 2em;
+  width: 3em;
+  padding: 0.5em;
+  border: blue solid 1px;
+  border-radius: 20%;
+}
+
+img.saveIcon:hover {
+  background-color: rgb(7, 252, 252);
 }
 
 .topSave {

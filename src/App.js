@@ -3,8 +3,9 @@ import "./App.css";
 import SearchInput from "./components/SearchInput";
 import CounterMovies from "./components/CounterMovies";
 import ListOfMovies from "./components/ListOfMovies";
-import axios from "axios";
 import Header from "./components/Header";
+import today from "./today";
+import axios from "axios";
 
 class App extends Component {
   constructor(props) {
@@ -13,6 +14,8 @@ class App extends Component {
     this.state = {
       titles: [],
       description: [],
+      savedMovies: [],
+      likedMovies: [],
     };
 
     this.handleDescription = this.handleDescription.bind(this);
@@ -21,12 +24,24 @@ class App extends Component {
     this.handleLikes = this.handleLikes.bind(this);
   }
 
-  handleSave() {
-    console.log("hey it is working");
+  handleSave(movie) {
+    this.setState((prevState) => ({
+      savedMovies: [...prevState.savedMovies, movie],
+    }));
   }
 
-  handleLikes() {
-    console.log("likes");
+  handleLikes(movie, vote) {
+    let temp = this.state.likedMovies.filter(
+      (item) => item.imdb_id !== movie.imdb_id
+    );
+    movie.popularity += vote;
+    let like = `you liked this movie on: ${today()}`;
+    let disliked = `you disliked this movie on: ${today()}`;
+    let messageVote = vote === 1 ? like : disliked;
+    movie.message = messageVote;
+    this.setState({
+      likedMovies: [...temp, movie],
+    });
   }
 
   handleDescription(titles) {
@@ -95,6 +110,7 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.state.likedMovies);
     return (
       <div className="container">
         <Header />

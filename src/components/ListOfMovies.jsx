@@ -29,7 +29,7 @@ function ListOfMovies({ movies, save, likes }) {
                   <div className="topSave">
                     <img
                       className="saveIcon"
-                      onClick={save}
+                      onClick={() => save(movie)}
                       src={saveIcon}
                       alt="save icon"
                     />
@@ -38,14 +38,16 @@ function ListOfMovies({ movies, save, likes }) {
                   <div className="likeIcons">
                     <img
                       className="saveIcon"
-                      onClick={likes}
+                      onClick={() => likes(movie, 1)}
                       src={liked}
                       alt="liked icon"
                     />
-                    <h5>Vote</h5>
+                    <h5 style={{ color: "blue" }}>
+                      Popularity: {movie.popularity}
+                    </h5>
                     <img
                       className="saveIcon"
-                      onClick={() => likes()}
+                      onClick={() => likes(movie, -1)}
                       src={disliked}
                       alt="disliked icon"
                     />
@@ -58,7 +60,6 @@ function ListOfMovies({ movies, save, likes }) {
 
             <p className="bottomDescription">{movie.description}</p>
             <div className="bottomFacts">
-              <h4>Popularity: {movie.popularity}</h4>
               <h4>Release date: {movie.release}</h4>
               <h4>Rating: {movie.rating}</h4>
             </div>

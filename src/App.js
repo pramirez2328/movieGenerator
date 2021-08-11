@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
 import SearchInput from "./components/SearchInput";
-import CounterMovies from "./components/CounterMovies";
 import ListOfMovies from "./components/ListOfMovies";
 import MySavedMovies from "./components/MySavedMovies";
 import Header from "./components/Header";
@@ -23,6 +22,18 @@ class App extends Component {
     this.handleSearch = this.handleSearch.bind(this);
     this.handleSave = this.handleSave.bind(this);
     this.handleLikes = this.handleLikes.bind(this);
+    this.handleShowSavedMovies = this.handleShowSavedMovies.bind(this);
+  }
+
+  handleShowSavedMovies() {
+    let showMovie = document.getElementsByClassName("showMovies");
+    let movies = document.querySelectorAll(".moviesList");
+    for (let i = 0; i < showMovie.length; i++) {
+      showMovie[i].style.display = "block";
+    }
+    for (let i = 0; i < movies.length; i++) {
+      movies[i].style.display = "none";
+    }
   }
 
   handleSave(movie) {
@@ -106,26 +117,30 @@ class App extends Component {
 
       document.getElementById("emptyWarning").style.display = "none";
 
+      let showMovie = document.getElementsByClassName("showMovies");
+      for (let i = 0; i < showMovie.length; i++) {
+        showMovie[i].style.display = "none";
+      }
+
+      let movies = document.querySelectorAll(".moviesList");
+      for (let i = 0; i < movies.length; i++) {
+        movies[i].style.display = "block";
+      }
+
       title.value = "";
     }
   }
 
   render() {
-    console.log(this.state.likedMovies);
     return (
       <div className="container">
-        <Header />
+        <Header showSavedMovies={this.handleShowSavedMovies} />
         <hr className="hr" />
         <SearchInput search={this.handleSearch} />
         <MySavedMovies
           moviesSaved={this.state.savedMovies}
           likes={this.handleLikes}
         />
-        {this.state.description.length > 0 ? (
-          <CounterMovies moviesNumber={this.state.description.length} />
-        ) : (
-          ""
-        )}
         <ListOfMovies
           movies={this.state.description}
           save={this.handleSave}

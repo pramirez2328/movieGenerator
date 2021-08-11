@@ -1,0 +1,12 @@
+#topAnchor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  bottom: 4em;
+  right: 5em;
+}
+
+#topAnchor img {
+  width: 30px;
+}

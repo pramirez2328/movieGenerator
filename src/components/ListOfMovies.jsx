@@ -1,13 +1,15 @@
+import CounterMovies from "./CounterMovies";
 import saveIcon from "../images/save.svg";
 import liked from "../images/liked.svg";
 import disliked from "../images/disliked.svg";
 
 function ListOfMovies({ movies, save, likes }) {
   return (
-    <div>
+    <div className="moviesList">
+      {movies.length > 0 ? <CounterMovies moviesNumber={movies.length} /> : ""}
       {movies.map((movie) => {
         return (
-          <div key={movie.imdb_id} className="moviesList">
+          <div key={movie.imdb_id} className="list">
             <div className="topDescription">
               <div className="top">
                 <h1 className="topTitle">{movie.title}</h1>

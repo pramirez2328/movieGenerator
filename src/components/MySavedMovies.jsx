@@ -2,14 +2,17 @@ import liked from "../images/liked.svg";
 import disliked from "../images/disliked.svg";
 
 function MySavedMovies({ moviesSaved, likes }) {
+  const s = moviesSaved.length === 1 ? "" : "s";
   return (
-    <div>
+    <div className="showMovies" style={{ display: "none" }}>
+      <h4>{`You have saved ${moviesSaved.length} movie${s}`}</h4>
       {moviesSaved.map((movie) => {
         return (
-          <div key={movie.imdb_id} className="moviesList">
+          <div key={movie.imdb_id} className="moviesList2">
             <div className="topDescription">
               <div className="top">
                 <h1 className="topTitle">{movie.title}</h1>
+                <hr className="hr2" />
                 <h5>
                   {movie.year} &nbsp;
                   {movie.gen[0].genre}
@@ -18,12 +21,6 @@ function MySavedMovies({ moviesSaved, likes }) {
                 </h5>
                 <h5>running time {movie.movie_length}</h5>
                 <h5 className="topPlot">{movie.plot}</h5>
-                <iframe
-                  className="trailer"
-                  title={movie.title}
-                  src={movie.trailer}
-                  allow="fullscreen"
-                ></iframe>
                 <div className="saveAndVote">
                   <div className="likeIcons">
                     <img
@@ -43,6 +40,12 @@ function MySavedMovies({ moviesSaved, likes }) {
                     />
                   </div>
                 </div>
+                <iframe
+                  className="trailer"
+                  title={movie.title}
+                  src={movie.trailer}
+                  allow="fullscreen"
+                ></iframe>
               </div>
 
               <img className="banner" src={movie.banner} alt="movie banner" />

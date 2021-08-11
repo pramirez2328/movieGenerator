@@ -13,12 +13,7 @@ function SearchInput({ search }) {
             style={{ borderRadius: "7px" }}
             required
           />
-          <button
-            id="inputButton"
-            type="button"
-            className="btn btn-primary"
-            onClick={search}
-          >
+          <button id="inputButton" type="button" onClick={search}>
             Search
           </button>
         </form>

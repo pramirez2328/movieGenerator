@@ -2,7 +2,7 @@ import banner1 from "../images/movieBanner.jpg";
 import banner2 from "../images/movieBanner2.jpg";
 import banner3 from "../images/movieBanner3.png";
 
-function Header() {
+function Header({ showSavedMovies }) {
   return (
     <header id="header">
       <div id="carousel">
@@ -18,6 +18,7 @@ function Header() {
               type="button"
               className="btn btn-info"
               style={{ marginRight: "2rem" }}
+              onClick={showSavedMovies}
             >
               MY MOVIES
             </button>

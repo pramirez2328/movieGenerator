@@ -6,18 +6,25 @@ function Header() {
   return (
     <header id="header">
       <div id="carousel">
-        <div className="text-center">
+        <div id="headerLeft">
           <h1 className="h1Title">Movie Reviews</h1>
           <hr className="hr" />
-
-          <h4 className="listDescription">You'll find:</h4>
-          <ul className="listDescription">
-            <li>Popularity</li>
-            <li>Reviews</li>
-            <li>Year created</li>
-            <li>Plot</li>
-            <li>Release date, etc...</li>
-          </ul>
+          <h4 className="listDescription">
+            You'll find:
+            <span> popularity, reviews, plot, release date, etc...</span>
+          </h4>
+          <div id="myButtons">
+            <button
+              type="button"
+              className="btn btn-info"
+              style={{ marginRight: "2rem" }}
+            >
+              MY MOVIES
+            </button>
+            <button type="button" className="btn btn-info">
+              MY LIKES
+            </button>
+          </div>
         </div>
 
         <div id="myCarousel" className="carousel slide" data-ride="carousel">

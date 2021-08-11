@@ -1,17 +1,15 @@
-import saveIcon from "../images/save.svg";
 import liked from "../images/liked.svg";
 import disliked from "../images/disliked.svg";
 
-function ListOfMovies({ movies, save, likes }) {
+function MySavedMovies({ moviesSaved, likes }) {
   return (
     <div>
-      {movies.map((movie) => {
+      {moviesSaved.map((movie) => {
         return (
           <div key={movie.imdb_id} className="moviesList">
             <div className="topDescription">
               <div className="top">
                 <h1 className="topTitle">{movie.title}</h1>
-                <hr className="hr2" />
                 <h5>
                   {movie.year} &nbsp;
                   {movie.gen[0].genre}
@@ -20,16 +18,13 @@ function ListOfMovies({ movies, save, likes }) {
                 </h5>
                 <h5>running time {movie.movie_length}</h5>
                 <h5 className="topPlot">{movie.plot}</h5>
+                <iframe
+                  className="trailer"
+                  title={movie.title}
+                  src={movie.trailer}
+                  allow="fullscreen"
+                ></iframe>
                 <div className="saveAndVote">
-                  <div className="topSave">
-                    <img
-                      className="saveIcon"
-                      onClick={() => save(movie)}
-                      src={saveIcon}
-                      alt="save icon"
-                    />
-                    <h5>Save</h5>
-                  </div>
                   <div className="likeIcons">
                     <img
                       className="saveIcon"
@@ -48,12 +43,6 @@ function ListOfMovies({ movies, save, likes }) {
                     />
                   </div>
                 </div>
-                <iframe
-                  className="trailer"
-                  title={movie.title}
-                  src={movie.trailer}
-                  allow="fullscreen"
-                ></iframe>
               </div>
 
               <img className="banner" src={movie.banner} alt="movie banner" />
@@ -71,4 +60,4 @@ function ListOfMovies({ movies, save, likes }) {
   );
 }
 
-export default ListOfMovies;
+export default MySavedMovies;

@@ -7,7 +7,6 @@
 
 body {
   line-height: 1;
-  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 ol,
@@ -20,6 +19,7 @@ ul {
   margin: auto;
   margin-top: 2rem;
   box-sizing: border-box;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 #header {
@@ -31,8 +31,12 @@ ul {
   justify-content: space-between;
 }
 
+#headerLeft {
+  width: 55%;
+}
+
 #myCarousel {
-  width: 50%;
+  width: 40%;
   height: 100%;
 }
 
@@ -44,7 +48,7 @@ ul {
 .h1Title {
   color: cyan;
   text-shadow: 1px 1px black;
-  letter-spacing: 0.5em;
+  letter-spacing: 0.7em;
   margin: 3rem auto;
   text-align: center;
 }
@@ -55,13 +59,23 @@ ul {
   width: 100%;
 }
 
+.hr2 {
+  background-color: blue;
+  padding: 1px;
+  width: 30%;
+}
+
+#myButtons {
+  display: flex;
+  margin-top: 2rem;
+}
+
 #inputId {
   display: flex;
   width: 70%;
 }
 
 .listDescription {
-  text-align: center;
   margin-top: 2em;
   font-family: fantasy;
   font-weight: bold;
@@ -108,18 +122,18 @@ ul {
 .trailer {
   width: 94%;
   height: 23em;
-  margin-bottom: 1em;
+  margin-top: 1em;
 }
 
 .saveAndVote {
   width: 94%;
   border-radius: 10px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-start;
 }
 
 .saveIcon {
-  width: 3em;
+  width: 2.5em;
   padding: 0.5em;
   border: blue solid 1px;
   border-radius: 20%;

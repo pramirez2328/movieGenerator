@@ -7,7 +7,12 @@ function SearchInput({ search }) {
       <div id="inputId">
         <h3 id="appDescription">Enter a movie title: </h3>
         <form style={{ width: "75%" }}>
-          <input type="text" id="input" required />
+          <input
+            type="text"
+            id="input"
+            style={{ borderRadius: "7px" }}
+            required
+          />
           <button
             id="inputButton"
             type="button"

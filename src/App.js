@@ -3,6 +3,7 @@ import "./App.css";
 import SearchInput from "./components/SearchInput";
 import CounterMovies from "./components/CounterMovies";
 import ListOfMovies from "./components/ListOfMovies";
+import MySavedMovies from "./components/MySavedMovies";
 import Header from "./components/Header";
 import today from "./today";
 import axios from "axios";
@@ -116,6 +117,10 @@ class App extends Component {
         <Header />
         <hr className="hr" />
         <SearchInput search={this.handleSearch} />
+        <MySavedMovies
+          moviesSaved={this.state.savedMovies}
+          likes={this.handleLikes}
+        />
         {this.state.description.length > 0 ? (
           <CounterMovies moviesNumber={this.state.description.length} />
         ) : (

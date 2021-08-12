@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import up from "./images/up.svg";
 import App from "./App";
 
 import reportWebVitals from "./reportWebVitals";
@@ -9,10 +8,6 @@ import reportWebVitals from "./reportWebVitals";
 ReactDOM.render(
   <React.StrictMode>
     <App />
-    <a href="#top" id="topAnchor">
-      <img src={up} alt="up icon" />
-      <p>back to top</p>
-    </a>
   </React.StrictMode>,
   document.getElementById("root")
 );

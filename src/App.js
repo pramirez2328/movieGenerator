@@ -3,6 +3,7 @@ import "./App.css";
 import SearchInput from "./components/SearchInput";
 import ListOfMovies from "./components/ListOfMovies";
 import MySavedMovies from "./components/MySavedMovies";
+import BackToTop from "./components/BackToTop";
 import Header from "./components/Header";
 import today from "./today";
 import axios from "axios";
@@ -37,6 +38,9 @@ class App extends Component {
   }
 
   handleSave(movie) {
+    let icon = document.querySelector(".saveIcon");
+    icon.style.backgroundColor = "#7FFFD4";
+
     this.setState((prevState) => ({
       savedMovies: [...prevState.savedMovies, movie],
     }));
@@ -146,6 +150,8 @@ class App extends Component {
           save={this.handleSave}
           likes={this.handleLikes}
         />
+
+        {this.state.titles.length === 0 ? "" : <BackToTop />}
       </div>
     );
   }

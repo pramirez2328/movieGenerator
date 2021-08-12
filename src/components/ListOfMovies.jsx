@@ -34,7 +34,7 @@ function ListOfMovies({ movies, save, likes }) {
                   </div>
                   <div className="likeIcons">
                     <img
-                      className="saveIcon"
+                      className="likedIcon"
                       onClick={() => likes(movie, 1)}
                       src={liked}
                       alt="liked icon"
@@ -43,7 +43,7 @@ function ListOfMovies({ movies, save, likes }) {
                       Popularity: {movie.popularity}
                     </h5>
                     <img
-                      className="saveIcon"
+                      className="dislikedIcon"
                       onClick={() => likes(movie, -1)}
                       src={disliked}
                       alt="disliked icon"

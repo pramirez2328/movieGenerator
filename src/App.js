@@ -38,12 +38,15 @@ class App extends Component {
   }
 
   handleSave(movie) {
-    let icon = document.querySelector(".saveIcon");
-    icon.style.backgroundColor = "#7FFFD4";
+    const temp = this.state.savedMovies.filter((item) => {
+      return item.imdb_id !== movie.imdb_id;
+    });
 
-    this.setState((prevState) => ({
-      savedMovies: [...prevState.savedMovies, movie],
-    }));
+    document.querySelector(`#${movie.imdb_id}`).innerText = "movie was saved!";
+
+    this.setState({
+      savedMovies: [...temp, movie],
+    });
   }
 
   handleLikes(movie, vote) {

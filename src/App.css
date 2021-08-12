@@ -166,15 +166,15 @@ ul {
 }
 
 img.saveIcon:hover {
-  background-color: rgb(7, 252, 252);
+  background-color: #63f8f8;
 }
 
 img.likedIcon:hover {
-  background-color: rgb(7, 252, 252);
+  background-color: #63f8f8;
 }
 
 img.dislikedIcon:hover {
-  background-color: rgb(7, 252, 252);
+  background-color: #63f8f8;
 }
 
 .topSave {
@@ -236,4 +236,11 @@ img.dislikedIcon:hover {
   height: 3rem;
   border: 1px solid rgb(5, 240, 244);
   color: blue;
+}
+
+#inputDiv {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  padding: 2rem;
 }

@@ -23,7 +23,7 @@ function ListOfMovies({ movies, save, likes }) {
                 <h5>running time {movie.movie_length}</h5>
                 <h5 className="topPlot">{movie.plot}</h5>
                 <div className="saveAndVote">
-                  <div className="topSave">
+                  <div id={movie.imdb_id} className="topSave">
                     <img
                       className="saveIcon"
                       onClick={() => save(movie)}

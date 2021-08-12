@@ -17,7 +17,6 @@ class App extends Component {
       titles: [],
       description: [],
       savedMovies: [],
-      likedMovies: [],
     };
 
     this.handleDescription = this.handleDescription.bind(this);
@@ -43,6 +42,11 @@ class App extends Component {
       return item.imdb_id !== movie.imdb_id;
     });
 
+    const textArea = document.getElementById(`${movie.imdb_id}story`).value;
+
+    movie.customReview = textArea;
+    movie.daySaved = `movie was saved on ${today()}`;
+
     document.querySelector(
       `#${movie.imdb_id}topSave`
     ).innerText = `movie was saved on ${today()}`;
@@ -53,7 +57,7 @@ class App extends Component {
   }
 
   handleLikes(movie, vote) {
-    let temp = this.state.likedMovies.filter(
+    let temp = this.state.description.filter(
       (item) => item.imdb_id !== movie.imdb_id
     );
     movie.popularity += vote;
@@ -70,7 +74,7 @@ class App extends Component {
     }
 
     this.setState({
-      likedMovies: [...temp, movie],
+      savedMovies: [...temp, movie],
     });
 
     document.querySelector(`#${movie.imdb_id}likedIcon`).innerText =

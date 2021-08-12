@@ -8,7 +8,11 @@ import angry from "../images/angry.svg";
 function ListOfMovies({ movies, save, likes }) {
   return (
     <div className="moviesList">
-      {movies.length > 0 ? <CounterMovies moviesNumber={movies.length} /> : ""}
+      {movies.length > 0 ? (
+        <CounterMovies moviesNumber={movies.length} condition="list" />
+      ) : (
+        ""
+      )}
       {movies.map((movie) => {
         return (
           <div key={movie.imdb_id} className="list">
@@ -41,10 +45,10 @@ function ListOfMovies({ movies, save, likes }) {
               <label htmlFor="story">What is your review:</label>
 
               <textarea
-                id="story"
+                id={movie.imdb_id + "story"}
                 name="story"
                 rows="5"
-                cols="4"
+                cols="3"
                 placeholder=" This movie is one of the most ... "
               ></textarea>
             </div>
@@ -80,14 +84,11 @@ function ListOfMovies({ movies, save, likes }) {
                 style={{ display: "none" }}
               />
 
-              <div id={movie.imdb_id + "topSave"} className="topSave">
-                <img
-                  className="saveIcon"
-                  onClick={() => save(movie)}
-                  src={saveIcon}
-                  alt="save icon"
-                />
-                <h5>Save</h5>
+              <div id={movie.imdb_id + "topSave"} className="savedDiv">
+                <button className="saveIcon" onClick={() => save(movie)}>
+                  <img src={saveIcon} alt="save icon" />
+                  Save
+                </button>
               </div>
             </div>
 

@@ -1,9 +1,12 @@
 import React from "react";
 
-function CounterMovies({ moviesNumber }) {
+function CounterMovies({ moviesNumber, condition }) {
+  const s = moviesNumber === 1 ? "" : "s";
+  const c = condition === "list" ? "There are " : "You have saved ";
   return (
     <h4 className="moviesCounter" style={{ color: "blue" }}>
-      {moviesNumber} MOVIES
+      {c}
+      {moviesNumber} movie{s}
     </h4>
   );
 }

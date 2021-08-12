@@ -22,9 +22,6 @@ function Header({ showSavedMovies }) {
             >
               MY MOVIES
             </button>
-            <button type="button" className="btn btn-info">
-              MY LIKES
-            </button>
           </div>
         </div>
 

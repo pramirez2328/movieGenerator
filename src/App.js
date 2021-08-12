@@ -6,6 +6,7 @@ import MySavedMovies from "./components/MySavedMovies";
 import BackToTop from "./components/BackToTop";
 import Header from "./components/Header";
 import today from "./today";
+
 import axios from "axios";
 
 class App extends Component {
@@ -42,7 +43,9 @@ class App extends Component {
       return item.imdb_id !== movie.imdb_id;
     });
 
-    document.querySelector(`#${movie.imdb_id}`).innerText = "movie was saved!";
+    document.querySelector(
+      `#${movie.imdb_id}topSave`
+    ).innerText = `movie was saved on ${today()}`;
 
     this.setState({
       savedMovies: [...temp, movie],
@@ -54,13 +57,24 @@ class App extends Component {
       (item) => item.imdb_id !== movie.imdb_id
     );
     movie.popularity += vote;
-    let like = `you liked this movie on: ${today()}`;
-    let disliked = `you disliked this movie on: ${today()}`;
+
+    let like = `you liked this movie `;
+    let disliked = `you disliked this movie `;
     let messageVote = vote === 1 ? like : disliked;
     movie.message = messageVote;
+
+    if (vote === 1) {
+      document.querySelector(`#${movie.imdb_id}love`).style.display = "block";
+    } else {
+      document.querySelector(`#${movie.imdb_id}angry`).style.display = "block";
+    }
+
     this.setState({
       likedMovies: [...temp, movie],
     });
+
+    document.querySelector(`#${movie.imdb_id}likedIcon`).innerText =
+      messageVote;
   }
 
   handleDescription(titles) {

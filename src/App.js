@@ -70,8 +70,7 @@ class App extends Component {
         method: "GET",
         url: `https://data-imdb1.p.rapidapi.com/movie/id/${movie.imdb_id}/`,
         headers: {
-          "x-rapidapi-key":
-            "c426a80468msh489383a1e8c815ap17e034jsn7fba12f2df64",
+          "x-rapidapi-key": process.env.API_KEY,
           "x-rapidapi-host": "data-imdb1.p.rapidapi.com",
         },
       };
@@ -99,8 +98,7 @@ class App extends Component {
         method: "GET",
         url: `https://data-imdb1.p.rapidapi.com/movie/imdb_id/byTitle/${title.value}/`,
         headers: {
-          "x-rapidapi-key":
-            "c426a80468msh489383a1e8c815ap17e034jsn7fba12f2df64",
+          "x-rapidapi-key": process.env.API_KEY,
           "x-rapidapi-host": "data-imdb1.p.rapidapi.com",
         },
       };

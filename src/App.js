@@ -24,6 +24,11 @@ class App extends Component {
     this.handleSave = this.handleSave.bind(this);
     this.handleLikes = this.handleLikes.bind(this);
     this.handleShowSavedMovies = this.handleShowSavedMovies.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
+  }
+
+  handleDelete(id) {
+    console.log(id);
   }
 
   handleShowSavedMovies() {
@@ -173,7 +178,7 @@ class App extends Component {
 
         <MySavedMovies
           moviesSaved={this.state.savedMovies}
-          likes={this.handleLikes}
+          deleteMovie={this.handleDelete}
         />
         <ListOfMovies
           movies={this.state.description}

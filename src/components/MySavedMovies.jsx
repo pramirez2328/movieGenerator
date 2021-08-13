@@ -1,7 +1,7 @@
 import CounterMovies from "./CounterMovies";
 import popcorn from "../images/popcorn.jpg";
 
-function MySavedMovies({ moviesSaved, likes }) {
+function MySavedMovies({ moviesSaved, deleteMovie }) {
   return (
     <div className="showMovies">
       {moviesSaved.length > 0 ? (
@@ -65,6 +65,7 @@ function MySavedMovies({ moviesSaved, likes }) {
                 id="deleteButton"
                 type="button"
                 className="btn btn-danger"
+                onClick={() => deleteMovie(movie.imdb_id)}
               >
                 Delete
               </button>

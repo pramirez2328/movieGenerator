@@ -267,6 +267,11 @@ textarea {
   padding: 1em;
 }
 
+textarea:focus,
+input:focus {
+  outline: none;
+}
+
 #inputId {
   width: 100%;
 }

@@ -42,14 +42,21 @@ class App extends Component {
       return item.imdb_id !== movie.imdb_id;
     });
 
-    const textArea = document.getElementById(`${movie.imdb_id}story`).value;
+    let textArea = document.getElementById(`${movie.imdb_id}story`).value;
 
+    if (textArea === "") {
+      textArea = "You did not write any review for this movie!";
+    }
     movie.customReview = textArea;
     movie.daySaved = `movie was saved on ${today()}`;
 
     document.querySelector(
       `#${movie.imdb_id}topSave`
     ).innerText = `movie was saved on ${today()}`;
+
+    if (!movie.message) {
+      movie.message = "You did not vote this movie";
+    }
 
     this.setState({
       savedMovies: [...temp, movie],
@@ -65,6 +72,7 @@ class App extends Component {
     let like = `you liked this movie `;
     let disliked = `you disliked this movie `;
     let messageVote = vote === 1 ? like : disliked;
+
     movie.message = messageVote;
 
     if (vote === 1) {

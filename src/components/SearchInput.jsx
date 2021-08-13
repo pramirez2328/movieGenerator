@@ -7,7 +7,7 @@ function SearchInput({ search }) {
       <div id="inputId">
         <h3 id="appDescription">Enter a movie title: </h3>
         <form onKeyDown={search}>
-          <input type="text" id="input" required />
+          <input type="text" id="input" spellCheck="false" />
           <img id="searchIcon" src={searchIcon} alt="search icon" />
         </form>
       </div>

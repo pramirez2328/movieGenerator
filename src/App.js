@@ -5,6 +5,7 @@ import ListOfMovies from "./components/ListOfMovies";
 import MySavedMovies from "./components/MySavedMovies";
 import BackToTop from "./components/BackToTop";
 import Header from "./components/Header";
+
 import today from "./today";
 
 import axios from "axios";
@@ -25,10 +26,18 @@ class App extends Component {
     this.handleLikes = this.handleLikes.bind(this);
     this.handleShowSavedMovies = this.handleShowSavedMovies.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
+    this.handleClear = this.handleClear.bind(this);
+  }
+
+  handleClear() {
+    this.setState({ titles: [], description: [] });
   }
 
   handleDelete(id) {
-    console.log(id);
+    let remainingMovies = this.state.savedMovies.filter(
+      (movie) => movie.imdb_id !== id
+    );
+    this.setState({ savedMovies: remainingMovies });
   }
 
   handleShowSavedMovies() {
@@ -174,7 +183,7 @@ class App extends Component {
       <div className="container">
         <Header showSavedMovies={this.handleShowSavedMovies} />
         <hr className="hr" />
-        <SearchInput search={this.handleSearch} />
+        <SearchInput search={this.handleSearch} clear={this.handleClear} />
 
         <MySavedMovies
           moviesSaved={this.state.savedMovies}

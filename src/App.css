@@ -32,18 +32,18 @@ ul {
 }
 
 #headerLeft {
-  width: 55%;
+  width: 45%;
 }
 
 #myCarousel {
-  width: 40%;
+  width: 50%;
   height: 100%;
 }
 
 .h1Title {
   color: cyan;
   text-shadow: 1px 1px black;
-  letter-spacing: 0.7em;
+  letter-spacing: 0.5em;
   margin: 3rem auto;
   text-align: center;
 }
@@ -60,9 +60,9 @@ ul {
   width: 30%;
 }
 
-#myButtons {
-  display: flex;
+#myButtons button {
   margin-top: 2rem;
+  width: 50%;
 }
 
 #inputId {
@@ -240,16 +240,23 @@ textarea {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-bottom: rgb(146, 194, 235) solid 1px;
+  margin-bottom: 2rem;
   position: sticky;
   top: 0;
-  background-color: white;
   padding: 1.3rem;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 27%,
+    rgba(12, 247, 219, 1) 100%
+  );
+  -webkit-box-shadow: 0px 10px 13px -7px #000000,
+    5px 5px 15px 5px rgba(0, 0, 0, 0);
+  box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 }
 
 #emptyWarning {
   display: none;
-
   color: red;
 }
 
@@ -257,14 +264,14 @@ textarea {
   font-family: fantasy;
   font-weight: bold;
   color: blue;
-  margin: 0 1em;
+  margin: 0 0.5em;
+  padding-top: 0.3em;
 }
 
 #input {
   width: 100%;
-  margin: auto;
-  height: 2rem;
-  padding: 1em;
+  height: 2.2em;
+  padding: 0 1em;
 }
 
 textarea:focus,
@@ -273,19 +280,29 @@ input:focus {
 }
 
 #inputId {
+  display: flex;
+  justify-content: space-between;
   width: 100%;
+}
+
+#inputInner {
+  display: flex;
+  justify-content: flex-start;
+
+  width: 60%;
+  margin: 0;
 }
 
 form {
   display: flex;
-  border: 1px solid rgb(5, 240, 244);
+  border: solid 1px black;
   border-radius: 3px;
   width: 60%;
 }
 
 #searchIcon {
   width: 20px;
-  margin-right: 1em;
+  margin: 0 1em;
 }
 
 .ulReviews {

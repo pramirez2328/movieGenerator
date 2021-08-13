@@ -214,7 +214,7 @@ textarea {
 }
 
 .movieReviews {
-  font-size: 1.3em;
+  font-size: 1.2em;
   display: flex;
 }
 
@@ -291,5 +291,17 @@ form {
 .ulReviews {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  margin-bottom: 0;
+}
+
+#deleteButtonDiv {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+#deleteButton {
+  width: 50%;
 }

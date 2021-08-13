@@ -47,7 +47,7 @@ function ListOfMovies({ movies, save, likes }) {
               <textarea
                 id={movie.imdb_id + "story"}
                 name="story"
-                rows="4"
+                rows="3"
                 cols="2"
                 placeholder=" This movie is one of the most ... "
               ></textarea>

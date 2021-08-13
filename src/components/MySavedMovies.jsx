@@ -42,7 +42,7 @@ function MySavedMovies({ moviesSaved, likes }) {
                 src={popcorn}
                 alt="icon gif"
                 style={{
-                  width: "25%",
+                  width: "20%",
                   marginRight: "1em",
                   borderRadius: "5px",
                 }}
@@ -59,6 +59,15 @@ function MySavedMovies({ moviesSaved, likes }) {
                   <span className="outputReviews">Saved:</span> {movie.daySaved}
                 </li>
               </ul>
+            </div>
+            <div id="deleteButtonDiv">
+              <button
+                id="deleteButton"
+                type="button"
+                className="btn btn-danger"
+              >
+                Delete
+              </button>
             </div>
 
             <div className="bottomFacts">

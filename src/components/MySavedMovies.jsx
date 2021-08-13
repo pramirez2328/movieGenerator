@@ -1,4 +1,5 @@
 import CounterMovies from "./CounterMovies";
+import popcorn from "../images/popcorn.jpg";
 
 function MySavedMovies({ moviesSaved, likes }) {
   return (
@@ -37,9 +38,27 @@ function MySavedMovies({ moviesSaved, likes }) {
             <p className="bottomDescription">{movie.description}</p>
 
             <div className="movieReviews">
-              <p>{movie.customReview}</p>
-              <p>{movie.message}</p>
-              <p>{movie.daySaved}</p>
+              <img
+                src={popcorn}
+                alt="icon gif"
+                style={{
+                  width: "25%",
+                  marginRight: "1em",
+                  borderRadius: "5px",
+                }}
+              />
+              <ul className="ulReviews">
+                <li>
+                  <span className="outputReviews">Review:</span>{" "}
+                  {movie.customReview}
+                </li>
+                <li>
+                  <span className="outputReviews">Like:</span> {movie.message}
+                </li>
+                <li>
+                  <span className="outputReviews">Saved:</span> {movie.daySaved}
+                </li>
+              </ul>
             </div>
 
             <div className="bottomFacts">

@@ -1,4 +1,4 @@
-import React from "react";
+import searchIcon from "../images/search.svg";
 
 function SearchInput({ search }) {
   return (
@@ -6,16 +6,9 @@ function SearchInput({ search }) {
       <h6 id="emptyWarning">...enter a movie title!</h6>
       <div id="inputId">
         <h3 id="appDescription">Enter a movie title: </h3>
-        <form style={{ width: "75%" }}>
-          <input
-            type="text"
-            id="input"
-            style={{ borderRadius: "7px" }}
-            required
-          />
-          <button id="inputButton" type="button" onClick={search}>
-            Search
-          </button>
+        <form onKeyDown={search}>
+          <input type="text" id="input" required />
+          <img id="searchIcon" src={searchIcon} alt="search icon" />
         </form>
       </div>
     </div>

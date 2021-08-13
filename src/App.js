@@ -105,52 +105,54 @@ class App extends Component {
   }
 
   handleSearch(e) {
-    e.preventDefault();
+    if (e.which === 13) {
+      e.preventDefault();
 
-    const title = document.getElementById("input");
+      const title = document.getElementById("input");
 
-    if (!title.value) {
-      document.getElementById("emptyWarning").style.display = "block";
-    } else {
-      const options = {
-        method: "GET",
-        url: `https://data-imdb1.p.rapidapi.com/movie/imdb_id/byTitle/${title.value}/`,
-        headers: {
-          "x-rapidapi-key": process.env.REACT_APP_API_KEY,
-          "x-rapidapi-host": "data-imdb1.p.rapidapi.com",
-        },
-      };
+      if (!title.value) {
+        document.getElementById("emptyWarning").style.display = "block";
+      } else {
+        const options = {
+          method: "GET",
+          url: `https://data-imdb1.p.rapidapi.com/movie/imdb_id/byTitle/${title.value}/`,
+          headers: {
+            "x-rapidapi-key": process.env.REACT_APP_API_KEY,
+            "x-rapidapi-host": "data-imdb1.p.rapidapi.com",
+          },
+        };
 
-      axios
-        .request(options)
-        .then((response) => {
-          if (response.data.Result.length > 0) {
-            this.setState({ titles: response.data.Result });
-            this.handleDescription(this.state.titles);
-          } else {
-            alert("Please check your spelling and try again!");
-          }
-        })
-        .catch(function (error) {
-          alert(
-            "The server is not working at this time, please try again later!",
-            error.message
-          );
-        });
+        axios
+          .request(options)
+          .then((response) => {
+            if (response.data.Result.length > 0) {
+              this.setState({ titles: response.data.Result });
+              this.handleDescription(this.state.titles);
+            } else {
+              alert("Please check your spelling and try again!");
+            }
+          })
+          .catch(function (error) {
+            alert(
+              "The server is not working at this time, please try again later!",
+              error.message
+            );
+          });
 
-      document.getElementById("emptyWarning").style.display = "none";
+        document.getElementById("emptyWarning").style.display = "none";
 
-      let showMovie = document.getElementsByClassName("showMovies");
-      for (let i = 0; i < showMovie.length; i++) {
-        showMovie[i].style.display = "none";
+        let showMovie = document.getElementsByClassName("showMovies");
+        for (let i = 0; i < showMovie.length; i++) {
+          showMovie[i].style.display = "none";
+        }
+
+        let movies = document.querySelectorAll(".moviesList");
+        for (let i = 0; i < movies.length; i++) {
+          movies[i].style.display = "block";
+        }
+
+        title.value = "";
       }
-
-      let movies = document.querySelectorAll(".moviesList");
-      for (let i = 0; i < movies.length; i++) {
-        movies[i].style.display = "block";
-      }
-
-      title.value = "";
     }
   }
 
@@ -160,6 +162,7 @@ class App extends Component {
         <Header showSavedMovies={this.handleShowSavedMovies} />
         <hr className="hr" />
         <SearchInput search={this.handleSearch} />
+
         <MySavedMovies
           moviesSaved={this.state.savedMovies}
           likes={this.handleLikes}
@@ -170,7 +173,7 @@ class App extends Component {
           likes={this.handleLikes}
         />
 
-        {this.state.titles.length === 0 ? "" : <BackToTop />}
+        {this.state.titles.length > 1 ? <BackToTop /> : ""}
       </div>
     );
   }

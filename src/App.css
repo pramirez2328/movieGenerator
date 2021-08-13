@@ -40,14 +40,6 @@ ul {
   height: 100%;
 }
 
-#appDescription {
-  margin: 0;
-  width: 30%;
-  font-family: fantasy;
-  font-weight: bold;
-  color: blue;
-}
-
 .h1Title {
   color: cyan;
   text-shadow: 1px 1px black;
@@ -148,10 +140,10 @@ ul {
 .dislikedIcon {
   width: 3em;
   padding: 0.5em;
-
   margin-right: 2rem;
   cursor: pointer;
 }
+
 .savedDiv {
   margin-left: 2rem;
   width: 20%;
@@ -221,6 +213,15 @@ textarea {
   margin-top: 2rem;
 }
 
+.movieReviews {
+  font-size: 1.3em;
+  display: flex;
+}
+
+.outputReviews {
+  color: blue;
+}
+
 .bottomFacts {
   display: flex;
   justify-content: space-around;
@@ -239,33 +240,51 @@ textarea {
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-bottom: rgb(146, 194, 235) solid 1px;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  padding: 1.3rem;
 }
 
 #emptyWarning {
   display: none;
-  width: 60%;
+
   color: red;
 }
 
+#appDescription {
+  font-family: fantasy;
+  font-weight: bold;
+  color: blue;
+  margin: 0 1em;
+}
+
 #input {
-  width: 70%;
+  width: 100%;
   margin: auto;
   height: 2rem;
   padding: 1em;
-  border: 1px solid rgb(5, 240, 244);
 }
 
-#inputButton {
-  width: 30%;
-  margin: auto;
-  height: 3rem;
-  border: 1px solid rgb(5, 240, 244);
-  color: blue;
+#inputId {
+  width: 100%;
 }
 
-#inputDiv {
-  position: sticky;
-  top: 0;
-  background-color: white;
-  padding: 2rem;
+form {
+  display: flex;
+  border: 1px solid rgb(5, 240, 244);
+  border-radius: 3px;
+  width: 60%;
+}
+
+#searchIcon {
+  width: 20px;
+  margin-right: 1em;
+}
+
+.ulReviews {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }

@@ -18,6 +18,7 @@ class App extends Component {
       titles: [],
       description: [],
       savedMovies: [],
+      anchorTag: false,
     };
 
     this.handleDescription = this.handleDescription.bind(this);
@@ -30,14 +31,19 @@ class App extends Component {
   }
 
   handleClear() {
-    this.setState({ titles: [], description: [] });
+    this.setState({ titles: [], description: [], anchorTag: false });
+    let showMovie = document.getElementsByClassName("showMovies");
+    for (let i = 0; i < showMovie.length; i++) {
+      showMovie[i].style.display = "none";
+    }
   }
 
   handleDelete(id) {
     let remainingMovies = this.state.savedMovies.filter(
       (movie) => movie.imdb_id !== id
     );
-    this.setState({ savedMovies: remainingMovies });
+    let temp = remainingMovies.length === 0 ? false : true;
+    this.setState({ savedMovies: remainingMovies, anchorTag: temp });
   }
 
   handleShowSavedMovies() {
@@ -49,9 +55,15 @@ class App extends Component {
     for (let i = 0; i < movies.length; i++) {
       movies[i].style.display = "none";
     }
+
+    let temp = this.state.savedMovies.length === 0 ? false : true;
+    this.setState({ titles: [], description: [], anchorTag: temp });
   }
 
   handleSave(movie) {
+    let temp = this.state.savedMovies.filter(
+      (item) => item.imdb_id !== movie.imdb_id
+    );
     let textArea = document.getElementById(`${movie.imdb_id}story`).value;
 
     if (textArea === "") {
@@ -69,16 +81,12 @@ class App extends Component {
     }
 
     this.setState({
-      savedMovies: [...this.state.savedMovies, movie],
+      savedMovies: [...temp, movie],
     });
   }
 
   handleLikes(movie, vote) {
-    let temp = this.state.description.filter(
-      (item) => item.imdb_id !== movie.imdb_id
-    );
     movie.popularity += vote;
-
     let like = `you liked this movie `;
     let disliked = `you disliked this movie `;
     let messageVote = vote === 1 ? like : disliked;
@@ -92,10 +100,6 @@ class App extends Component {
     } else {
       document.querySelector(`#${movie.imdb_id}angry`).style.display = "block";
     }
-
-    this.setState({
-      savedMovies: [...temp, movie],
-    });
   }
 
   handleDescription(titles) {
@@ -113,7 +117,7 @@ class App extends Component {
         .request(options)
         .then((response) => {
           arr.push(response.data[movie.title]);
-          this.setState({ description: arr });
+          this.setState({ description: arr, anchorTag: true });
         })
         .catch(function (error) {
           console.error(error);
@@ -174,6 +178,7 @@ class App extends Component {
   }
 
   render() {
+    console.log("hey", this.state.savedMovies);
     return (
       <div className="container">
         <Header showSavedMovies={this.handleShowSavedMovies} />
@@ -190,7 +195,7 @@ class App extends Component {
           likes={this.handleLikes}
         />
 
-        {this.state.titles.length > 1 ? <BackToTop /> : ""}
+        {this.state.anchorTag ? <BackToTop /> : ""}
       </div>
     );
   }

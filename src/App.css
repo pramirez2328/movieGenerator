@@ -322,3 +322,83 @@ form {
 #deleteButton {
   width: 50%;
 }
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 1024px) {
+  .container {
+    width: 100% !important;
+  }
+  #carousel {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  #myCarousel {
+    width: 100%;
+  }
+
+  #headerLeft {
+    width: 100%;
+  }
+
+  .listDescription {
+    text-align: center;
+  }
+
+  #myButtons {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  #myButtons button {
+    width: 70%;
+  }
+
+  #appDescription {
+    font-size: 1.2em;
+    margin: 0 0.5em;
+    padding-top: 0.3em;
+  }
+
+  #input {
+    height: 1.7em;
+  }
+
+  #searchIcon {
+    width: 12px;
+    margin: 0 1em;
+  }
+
+  form {
+    display: flex;
+    border: solid 1px black;
+    border-radius: 3px;
+    width: 60%;
+    height: 1.9em;
+  }
+
+  .topDescription {
+    height: 30em;
+  }
+
+  .banner {
+    width: 50%;
+  }
+
+  #topAnchor {
+    bottom: 4em;
+    right: 2em;
+  }
+}

@@ -11,7 +11,7 @@ function Header({ showSavedMovies }) {
           <hr className="hr" />
           <h4 className="listDescription">
             You'll find:
-            <span> popularity, reviews, plot, release date, etc...</span>
+            <span>popularity, category, plot, release date, etc...</span>
           </h4>
           <div id="myButtons">
             <button
@@ -23,6 +23,9 @@ function Header({ showSavedMovies }) {
               MY MOVIES
             </button>
           </div>
+          <h6 id="noMovieSaved" style={{ display: "none", color: "red" }}>
+            You haven't saved any movie
+          </h6>
         </div>
 
         <div id="myCarousel" className="carousel slide" data-ride="carousel">

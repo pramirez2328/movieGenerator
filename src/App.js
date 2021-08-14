@@ -48,6 +48,11 @@ class App extends Component {
 
   handleShowSavedMovies() {
     let showMovie = document.getElementsByClassName("showMovies");
+
+    if (this.state.savedMovies.length === 0) {
+      document.getElementById("noMovieSaved").style.display = "block";
+    }
+
     let movies = document.querySelectorAll(".moviesList");
     for (let i = 0; i < showMovie.length; i++) {
       showMovie[i].style.display = "block";
@@ -130,6 +135,7 @@ class App extends Component {
       e.preventDefault();
 
       const title = document.getElementById("input");
+      document.getElementById("noMovieSaved").style.display = "none";
 
       if (!title.value) {
         document.getElementById("emptyWarning").style.display = "block";

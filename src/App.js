@@ -52,10 +52,6 @@ class App extends Component {
   }
 
   handleSave(movie) {
-    const temp = this.state.savedMovies.filter((item) => {
-      return item.imdb_id !== movie.imdb_id;
-    });
-
     let textArea = document.getElementById(`${movie.imdb_id}story`).value;
 
     if (textArea === "") {
@@ -73,7 +69,7 @@ class App extends Component {
     }
 
     this.setState({
-      savedMovies: [...temp, movie],
+      savedMovies: [...this.state.savedMovies, movie],
     });
   }
 
@@ -88,6 +84,8 @@ class App extends Component {
     let messageVote = vote === 1 ? like : disliked;
 
     movie.message = messageVote;
+    document.querySelector(`#${movie.imdb_id}likedIcon`).innerText =
+      messageVote;
 
     if (vote === 1) {
       document.querySelector(`#${movie.imdb_id}love`).style.display = "block";
@@ -98,9 +96,6 @@ class App extends Component {
     this.setState({
       savedMovies: [...temp, movie],
     });
-
-    document.querySelector(`#${movie.imdb_id}likedIcon`).innerText =
-      messageVote;
   }
 
   handleDescription(titles) {

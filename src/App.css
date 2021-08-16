@@ -240,15 +240,7 @@ textarea {
   position: sticky;
   top: 0;
   padding: 1.3rem;
-  background: rgb(255, 255, 255);
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 1) 27%,
-    rgb(3, 223, 247) 100%
-  );
-  -webkit-box-shadow: 0px 10px 13px -7px #000000,
-    5px 5px 15px 5px rgba(0, 0, 0, 0);
-  box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+  background-color: white;
 }
 
 #emptyWarning {
@@ -284,9 +276,10 @@ input:focus {
 #inputInner {
   display: flex;
   justify-content: flex-start;
-
+  -webkit-box-shadow: 0px 10px 13px -7px #000000,
+    5px 5px 15px 5px rgba(0, 0, 0, 0);
+  box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
   width: 60%;
-  margin: 0;
 }
 
 form {
@@ -294,6 +287,7 @@ form {
   border: solid 1px black;
   border-radius: 3px;
   width: 60%;
+  margin: 1em 0;
 }
 
 #searchIcon {
@@ -357,21 +351,27 @@ form {
       5px 20px 23px 31px rgba(0, 0, 0, 0);
   }
 
+  #inputDiv {
+    padding: 0 !important;
+  }
+
   #inputId {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 100% !important;
   }
 
   #inputInner {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-end;
     width: 100% !important;
     margin: 0;
   }
 
   form {
-    width: 50% !important;
+    width: 70% !important;
+    margin-top: 1em;
   }
 
   #clear {

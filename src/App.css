@@ -408,7 +408,7 @@ form {
 
   a#topAnchor {
     bottom: 7em !important;
-    right: 1em !important;
+    right: 0.5em !important;
   }
 
   #backTo {
@@ -418,9 +418,33 @@ form {
   #topAnchor img {
     width: 10px !important;
   }
+
+  .movieReviews {
+    font-size: 1em !important;
+    display: block;
+  }
+
+  .movieReviews img {
+    width: 100% !important;
+    margin: 1em 0;
+  }
+
+  #deleteButton {
+    width: 100% !important;
+  }
 }
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (max-width: 812px) {
+  #appDescription {
+    font-family: Georgia, "Times New Roman", Times, serif !important;
+    font-weight: normal !important;
+  }
+
+  .listDescription {
+    font-family: Georgia, "Times New Roman", Times, serif !important;
+    font-weight: normal !important;
+  }
+
   .topTitle {
     font-size: 2em !important;
   }

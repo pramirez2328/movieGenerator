@@ -4,7 +4,9 @@ https://movie-generator-reviews.netlify.app/
 react application to find almost any movie in the world and save customs reviews and upvote favorites!
 
 ## Main features
- #### -search box to find a movie
+ #### -search box to find a moviec
+ #### -full movie description
+ #### -Youtube trailer
  #### -input box for custom reviews
  #### -like or disliked icons
  #### -save button

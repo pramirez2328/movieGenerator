@@ -111,6 +111,7 @@ class App extends Component {
     const arr = [];
     titles.forEach((movie) => {
       const options = {
+        credentials: "include",
         method: "GET",
         url: `https://data-imdb1.p.rapidapi.com/movie/id/${movie.imdb_id}/`,
         headers: {
@@ -141,6 +142,7 @@ class App extends Component {
         document.getElementById("emptyWarning").style.display = "block";
       } else {
         const options = {
+          credentials: "include",
           method: "GET",
           url: `https://data-imdb1.p.rapidapi.com/movie/imdb_id/byTitle/${title.value}/`,
           headers: {

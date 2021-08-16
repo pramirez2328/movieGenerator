@@ -4,7 +4,9 @@ function BackToTop() {
     <div>
       <a href="#top" id="topAnchor">
         <img src={up} alt="up icon" />
-        <p>back to top</p>
+        <p>
+          <span id="backTo">back to</span> top
+        </p>
       </a>
     </div>
   );

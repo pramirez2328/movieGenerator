@@ -323,11 +323,95 @@ form {
   width: 50%;
 }
 
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-}
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
+@media (max-width: 420px) {
+  #root {
+    width: 90% !important;
+  }
+  #myButtons {
+    display: block !important;
+    margin-bottom: 1rem !important;
+  }
+
+  #myButtons button {
+    margin-top: 0.5rem !important;
+    width: 100% !important;
+  }
+
+  .h1Title {
+    letter-spacing: 0.3em !important;
+    color: rgb(1, 46, 245);
+    text-shadow: 1px 1px black;
+    margin: 0 !important;
+    font-size: 2.5em !important;
+    border: black solid 0.5px;
+    padding: 1em;
+    -webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
+      5px 20px 23px 31px rgba(0, 0, 0, 0);
+    box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
+      5px 20px 23px 31px rgba(0, 0, 0, 0);
+  }
+
+  #inputId {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  #inputInner {
+    display: flex;
+    justify-content: space-between;
+    width: 100% !important;
+    margin: 0;
+  }
+
+  form {
+    width: 50% !important;
+  }
+
+  #clear {
+    margin-top: 1em !important;
+  }
+
+  .topDescription {
+    flex-direction: column !important;
+    width: 100%;
+    height: auto !important;
+  }
+
+  .hr2 {
+    margin: 0.5em 0 !important;
+  }
+
+  topPlot {
+    margin: 1rem 0 !important;
+  }
+
+  .trailer {
+    width: 100%;
+    height: auto !important;
+  }
+
+  img.banner {
+    width: 100% !important;
+  }
+
+  .bottomFacts {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  a#topAnchor {
+    bottom: 7em !important;
+    right: 1em !important;
+  }
+
+  #backTo {
+    display: none;
+  }
+
+  #topAnchor img {
+    width: 10px !important;
+  }
 }
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (max-width: 812px) {
@@ -336,7 +420,7 @@ form {
   }
 
   #appDescription {
-    font-size: 1em;
+    font-size: 1em !important;
   }
 
   #inputInner {
@@ -384,6 +468,10 @@ form {
 
   #headerLeft {
     width: 100%;
+  }
+
+  .topTitle {
+    font-size: 2em !important;
   }
 
   .listDescription {

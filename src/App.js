@@ -184,7 +184,6 @@ class App extends Component {
   }
 
   render() {
-    console.log("hey", this.state.savedMovies);
     return (
       <div className="container">
         <Header showSavedMovies={this.handleShowSavedMovies} />

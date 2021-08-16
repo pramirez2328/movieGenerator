@@ -30,6 +30,20 @@ class App extends Component {
     this.handleClear = this.handleClear.bind(this);
   }
 
+  componentDidMount() {
+    const preSaved = localStorage.getItem("savedMovies");
+    if (preSaved !== null) {
+      this.setState({ savedMovies: JSON.parse(preSaved) });
+    }
+  }
+
+  componentDidUpdate() {
+    return localStorage.setItem(
+      "savedMovies",
+      JSON.stringify(this.state.savedMovies)
+    );
+  }
+
   handleClear() {
     this.setState({ titles: [], description: [], anchorTag: false });
     let showMovie = document.getElementsByClassName("showMovies");
@@ -84,9 +98,9 @@ class App extends Component {
     if (!movie.message) {
       movie.message = "You did not vote this movie";
     }
-
+    temp.push(movie);
     this.setState({
-      savedMovies: [...temp, movie],
+      savedMovies: temp,
     });
   }
 

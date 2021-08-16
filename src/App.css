@@ -337,6 +337,16 @@ form {
     width: 100% !important;
   }
 
+  #appDescription {
+    font-family: Georgia, "Times New Roman", Times, serif !important;
+    font-weight: normal !important;
+  }
+
+  .listDescription {
+    font-family: Georgia, "Times New Roman", Times, serif !important;
+    font-weight: normal !important;
+  }
+
   .h1Title {
     letter-spacing: 0.3em !important;
     color: rgb(1, 46, 245);

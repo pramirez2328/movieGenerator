@@ -11,7 +11,7 @@ function Header({ showSavedMovies }) {
           <hr className="hr" />
           <h4 className="listDescription">
             You'll find:
-            <span>popularity, category, plot, release date, etc...</span>
+            <span> popularity, category, plot, release date, etc...</span>
           </h4>
           <div id="myButtons">
             <button

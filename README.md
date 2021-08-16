@@ -1,3 +1,19 @@
+# Movie generator
+https://movie-generator-reviews.netlify.app/
+
+react application to find almost any movie in the world and save customs reviews and upvote favorites!
+
+## Main features
+ #### -search box to find a movie
+ #### -input box for custom reviews
+ #### -like or disliked icons
+ #### -save button
+ #### -clear button
+ #### -list of saved-movies button
+ #### -local storage 
+ 
+ 
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

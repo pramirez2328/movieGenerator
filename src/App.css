@@ -120,7 +120,7 @@ ul {
 }
 
 .topPlot {
-  margin: 1rem 5rem 2rem 0;
+  margin: 1rem 1rem 1rem 0;
 }
 
 .trailer {
@@ -330,8 +330,43 @@ form {
 @media only screen and (min-width: 600px) {
 }
 /* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
+@media only screen and (max-width: 812px) {
+  .topTitle {
+    font-size: 2em !important;
+  }
+
+  #appDescription {
+    font-size: 1em;
+  }
+
+  #inputInner {
+    width: 70%;
+  }
+
+  .top {
+    margin-right: 1rem;
+    width: auto;
+  }
+
+  .banner {
+    width: 35% !important;
+  }
+
+  .trailer {
+    margin-top: 0.3em;
+  }
+
+  #topAnchor {
+    bottom: 5em !important;
+    right: 1.7em !important;
+    font-size: small;
+  }
+
+  #topAnchor img {
+    width: 20px !important;
+  }
 }
+
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (max-width: 1024px) {
   .container {

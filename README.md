@@ -1,4 +1,6 @@
 # Movie generator
+https://movie-generator-reviews.netlify.app/
+
 react application to find almost any movie in the world and save customs reviews and upvote favorites!
 
 ## Main features

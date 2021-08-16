@@ -11,7 +11,7 @@ react application to find almost any movie in the world and save customs reviews
  #### -like or disliked icons
  #### -save button
  #### -clear button
- #### -list of saved-movies button
+ #### -list of saved-movies 
  #### -local storage 
  
  

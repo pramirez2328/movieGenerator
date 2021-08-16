@@ -1,5 +1,8 @@
 # Movie generator
-react application to find almost any movie in world and save customs reviews and upvote favorites!
+react application to find almost any movie in the world and save customs reviews and upvote favorites!
+
+## core features
+ ### search box to find a movie
 
 # Getting Started with Create React App
 

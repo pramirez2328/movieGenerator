@@ -252,7 +252,7 @@ textarea {
   font-family: fantasy;
   font-weight: bold;
   color: blue;
-  margin: 0 0.5em;
+  margin: 0.5em 0.3em;
   padding-top: 0.3em;
 }
 
@@ -451,6 +451,7 @@ form {
 
   #appDescription {
     font-size: 1em !important;
+    margin: 1em 0.3em !important;
   }
 
   #inputInner {
@@ -521,7 +522,7 @@ form {
 
   #appDescription {
     font-size: 1.2em;
-    margin: 0 0.5em;
+    margin: 0 0.5em !important;
     padding-top: 0.3em;
   }
 

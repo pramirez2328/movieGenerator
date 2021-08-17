@@ -372,6 +372,7 @@ form {
   form {
     width: 70% !important;
     margin-top: 1em;
+    margin-right: 0.5em;
   }
 
   #clear {
@@ -382,6 +383,10 @@ form {
     flex-direction: column !important;
     width: 100%;
     height: auto !important;
+  }
+
+  .top {
+    margin-right: 0 !important;
   }
 
   .hr2 {

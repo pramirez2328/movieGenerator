@@ -37,7 +37,7 @@ ul {
 }
 
 .h1Title {
-  color: cyan;
+  color: rgb(3, 209, 209);
   text-shadow: 1px 1px black;
   letter-spacing: 0.5em;
   margin: 3rem auto;

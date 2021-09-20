@@ -127,7 +127,9 @@ class App extends Component {
         method: "GET",
         url: `https://data-imdb1.p.rapidapi.com/movie/id/${movie.imdb_id}/`,
         headers: {
-          "x-rapidapi-key": process.env.REACT_APP_API_KEY,
+          // "x-rapidapi-key": process.env.REACT_APP_API_KEY,
+          "x-rapidapi-key":
+            "36f8e3d5c8mshd5ca2515c026760p150c4bjsn3d5f1a474903",
           "x-rapidapi-host": "data-imdb1.p.rapidapi.com",
         },
       };
@@ -135,6 +137,7 @@ class App extends Component {
         .request(options)
         .then((response) => {
           arr.push(response.data[movie.title]);
+          console.log(response);
           this.setState({ description: arr, anchorTag: true });
         })
         .catch(function (error) {
@@ -158,7 +161,9 @@ class App extends Component {
           method: "GET",
           url: `https://data-imdb1.p.rapidapi.com/movie/imdb_id/byTitle/${title.value}/`,
           headers: {
-            "x-rapidapi-key": process.env.REACT_APP_API_KEY,
+            // "x-rapidapi-key": process.env.REACT_APP_API_KEY,
+            "x-rapidapi-key":
+              "36f8e3d5c8mshd5ca2515c026760p150c4bjsn3d5f1a474903",
             "x-rapidapi-host": "data-imdb1.p.rapidapi.com",
           },
         };
@@ -167,6 +172,7 @@ class App extends Component {
           .request(options)
           .then((response) => {
             if (response.data.Result.length > 0) {
+              console.log(response);
               this.setState({ titles: response.data.Result });
               this.handleDescription(this.state.titles);
             } else {
@@ -174,6 +180,7 @@ class App extends Component {
             }
           })
           .catch(function (error) {
+            console.log(error.message);
             alert(
               "The server is not working at this time, please try again later!",
               error.message

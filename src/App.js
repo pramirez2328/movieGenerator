@@ -5,9 +5,7 @@ import ListOfMovies from "./components/ListOfMovies";
 import MySavedMovies from "./components/MySavedMovies";
 import BackToTop from "./components/BackToTop";
 import Header from "./components/Header";
-
 import today from "./today";
-
 import axios from "axios";
 
 class App extends Component {

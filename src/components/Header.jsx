@@ -1,3 +1,4 @@
+import React from "react";
 import banner1 from "../images/movieBanner.jpg";
 import banner2 from "../images/movieBanner2.jpg";
 import banner3 from "../images/movieBanner3.png";

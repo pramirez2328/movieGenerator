@@ -1,3 +1,4 @@
+import React from "react";
 import CounterMovies from "./CounterMovies";
 import popcorn from "../images/popcorn.jpg";
 

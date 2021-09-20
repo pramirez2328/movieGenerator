@@ -1,3 +1,4 @@
+import React from "react";
 import up from "../images/up.svg";
 function BackToTop() {
   return (

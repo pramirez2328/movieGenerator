@@ -1,3 +1,4 @@
+import React from "react";
 import searchIcon from "../images/search.svg";
 import Clear from "../components/Clear.jsx";
 

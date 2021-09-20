@@ -1,3 +1,4 @@
+import React from "react";
 import CounterMovies from "./CounterMovies";
 import saveIcon from "../images/save.svg";
 import liked from "../images/liked.svg";

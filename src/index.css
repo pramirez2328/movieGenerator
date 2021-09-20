@@ -1,4 +1,4 @@
-/* #topAnchor {
+#topAnchor {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -9,4 +9,4 @@
 
 #topAnchor img {
   width: 30px;
-} */
+}
